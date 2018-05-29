@@ -1,0 +1,26 @@
+version: "3"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    command: dumb-init python3 server.py
+    environment:
+      - "CC_ADMIN_CONSOLE_GRAPHQL_URL=http://api:3030/graphql"
+      # add dependencies to the PYTHONPATH
+      - "PYTHONPATH=/app/bushn:/app/jars"
+      - "ENV=development"
+    volumes:
+      - .:/app
+    ports:
+      - "8080:8080"
+    networks:
+      crosscloud-dev:
+        aliases:
+          - webdav
+
+networks:
+  crosscloud-dev:
+    external:
+      name: crosscloud-dev

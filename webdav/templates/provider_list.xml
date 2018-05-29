@@ -1,0 +1,30 @@
+<ns0:multistatus xmlns:ns0="DAV:">
+  <ns0:response>
+    <ns0:href>/</ns0:href>
+    <ns0:propstat>
+      <ns0:prop>
+        <ns0:resourcetype>
+          <ns0:collection/>
+        </ns0:resourcetype>
+        <ns0:displayname/>
+        <ns0:getetag>is_dir</ns0:getetag>
+      </ns0:prop>
+      <ns0:status>HTTP/1.1 200 OK</ns0:status>
+    </ns0:propstat>
+  </ns0:response>
+{%- for provider in providers %}
+  <ns0:response>
+    <ns0:href>/{{provider.storage_id}}/</ns0:href>
+    <ns0:propstat>
+      <ns0:prop>
+        <ns0:resourcetype>
+          <ns0:collection/>
+        </ns0:resourcetype>
+        <ns0:displayname>{{provider.display_name}}</ns0:displayname>
+        <ns0:getetag>is_dir</ns0:getetag>
+      </ns0:prop>
+      <ns0:status>HTTP/1.1 200 OK</ns0:status>
+    </ns0:propstat>
+  </ns0:response>
+{%- endfor %}
+</ns0:multistatus>

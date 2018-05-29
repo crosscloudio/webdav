@@ -1,0 +1,9 @@
+Flask
+python-dateutil
+raven[flask]
+atomicwrites==1.1.5
+filelock
+pytz
+requests==2.17.3
+requests_oauthlib
+requests-ntlm==1.0.0

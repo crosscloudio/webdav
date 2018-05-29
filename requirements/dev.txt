@@ -1,0 +1,12 @@
+-r base.txt
+
+bumpversion
+Werkzeug==0.12.1
+watchdog
+pep8
+pytest
+pytest-cov
+pylint==1.5.6
+pytest-mock
+requests-mock
+hypothesis==3.11.6

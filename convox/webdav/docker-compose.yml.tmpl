@@ -1,0 +1,11 @@
+version: "2"
+
+services:
+  web:
+    image: 767291032449.dkr.ecr.eu-central-1.amazonaws.com/crosscloud-webdav:${CI_PIPELINE_ID}
+    environment:
+      - CC_ADMIN_CONSOLE_GRAPHQL_URL
+      - SECRET_KEY
+    ports:
+      # internal only, until convox supports ALB and path based routing
+      - 8080

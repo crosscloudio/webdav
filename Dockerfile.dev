@@ -1,0 +1,24 @@
+FROM python:3.6.2-stretch
+
+RUN wget https://github.com/Yelp/dumb-init/releases/download/v1.2.0/dumb-init_1.2.0_amd64.deb &&\
+    dpkg -i dumb-init_*.deb &&\
+    rm dumb-init_*.deb &&\
+    useradd -u 1000 app &&\
+    apt-get update &&\
+    apt-get install -y libsmbclient &&\
+    mkdir -p /var/cache/samba &&\
+    echo "tmpfs /var/cache/samba tmpfs defaults,noexec,nosuid,nodev,mode=0755,size=128M 0 0" >> /etc/fstab
+
+WORKDIR /app/
+
+ADD smb.conf /etc/samba/smb.conf
+ADD requirements/*.txt /app/requirements/
+ADD jars/requirements.txt /app/requirements/jars-base.txt
+
+# filter jars dependencies to not install bushn from a private git repository
+RUN cat /app/requirements/jars-base.txt | grep -v git+ssh://git@gitlab.crosscloud.me > /tmp/jars-requirements-filtered.txt &&\
+    pip install -r /tmp/jars-requirements-filtered.txt &&\
+    rm /tmp/jars-requirements-filtered.txt &&\
+    pip install -r /app/requirements/dev.txt
+
+USER 1000

@@ -1,0 +1,2 @@
+git+ssh://git@gitlab.crosscloud.me/CrossCloud/bushn.git@v1.0.10#egg=bushn
+git+ssh://git@gitlab.crosscloud.me/CrossCloud/jars.git@v1.3.9#egg=jars

@@ -1,0 +1,30 @@
+<ns0:multistatus xmlns:ns0="DAV:" xmlns:ns1="crosscloud:">
+  <ns0:response>
+    <ns0:href>/dropbox_1498551067.4982216/</ns0:href>
+    <ns0:propstat>
+      <ns0:prop>
+        <ns0:resourcetype>
+          <ns0:collection/>
+        </ns0:resourcetype>
+        <ns0:displayname>Dropbox 1</ns0:displayname>
+        <ns0:getetag>is_dir</ns0:getetag>
+      </ns0:prop>
+      <ns0:status>HTTP/1.1 200 OK</ns0:status>
+    </ns0:propstat>
+  </ns0:response>
+  <ns0:response>
+    <ns0:href>/dropbox_1498551067.4982216/test%20-%20Copy.txt</ns0:href>
+    <ns0:propstat>
+      <ns0:prop>
+        <ns0:resourcetype/>
+        <ns0:getcontentlength>1660</ns0:getcontentlength>
+        <ns0:getcontenttype>text/plain</ns0:getcontenttype>
+        <ns0:displayname>test - Copy.txt</ns0:displayname>
+        <ns0:getetag>9b1b8e0ab235b65d4b024486a562590aa1ffcfc118e7bafab2e096665e0d0e5f</ns0:getetag>
+        <ns1:version_id>9b1b8e0ab235b65d4b024486a562590aa1ffcfc118e7bafab2e096665e0d0e5f</ns1:version_id>
+      </ns0:prop>
+      <ns0:status>HTTP/1.1 200 OK</ns0:status>
+    </ns0:propstat>
+  </ns0:response>
+  <ns0:response>
+</ns0:multistatus>

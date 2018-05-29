@@ -1,0 +1,6 @@
+-r base.txt
+-r private-deps.txt
+
+# waitress is installed separately during the build of the production
+# container, because it installs additional file to /usr/local/bin/
+# waitress
